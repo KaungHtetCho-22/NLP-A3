@@ -22,7 +22,6 @@ special_symbols = ['<unk>', '<pad>', '<sos>', '<eos>']
 mapping = vocab_transform[TRG_LANGUAGE].get_itos()
 
 token_transform = {}
-
 import pyidaungsu as pds
 my_tokenizer = pds.tokenize
 

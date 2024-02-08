@@ -31,6 +31,8 @@ def index():
         return render_template('index.html', translation=translation, src_sentence=src_sentence, model_type=model_type)
     else:
         return render_template('index.html', translation=None)
+    
+port_number = 8000
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, host='0.0.0.0', port=port_number)

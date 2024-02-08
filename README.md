@@ -7,15 +7,16 @@ NLP assignment from AIT
 1. [Task1](#Task1)
 2. [Task2](#Task2)
 3. [Task3](#Task3)
+4. [Task4](#Task4)
 
 ## Task1
-#### Dataset Acquisition
+#### 1. Dataset Acquisition
 
 Collect Eng / Myanmar parallel copurs from **TUFS Asian Language Parallel Corpus (TALPCo)** (https://github.com/matbahasa/TALPCo). Combine these two .txt files and make english-mynamar pairs. And then uploaded to hugging face repository in order to make load_datasets easier. (https://huggingface.co/datasets/KaungHtetCho/MT-myanmar-english)
 
 *Parameters*  ==>  (train = 1093 rows | test  = 137 rows | valid = 137 rows)
 
-#### Preprocessing
+#### 2. Preprocessing
 
 - Burmese tokenizer | Credit to Kaung Htet San for pyidaungsu Burmese tokenizer (https://pypi.org/project/pyidaungsu/?fbclid=IwAR2zk1sDeEEm-y3nPzzikzOux4hN7D-igRWpjZENL-01UBnbjHsylKP1nQU)
 
@@ -31,7 +32,6 @@ Collect Eng / Myanmar parallel copurs from **TUFS Asian Language Parallel Corpus
 <img src="image.png" alt="Burmese Word Segmentation Process" width="300"/>
 
 [Link to research](https://dl.acm.org/doi/pdf/10.1145/2846095)
-
 
 - Burmese word segmentation involves adding spaces in text without changing or rewriting anything else. As stated earlier, since syllables in Burmese are indivisible units, the process starts by separating these syllables with spaces. The next step is to figure out how these syllables come together to form words, which involves removing some of the spaces that were added between syllables. This is the basic approach for machines to segment Burmese words.
 
@@ -110,10 +110,11 @@ Collect Eng / Myanmar parallel copurs from **TUFS Asian Language Parallel Corpus
 
 #### 4. Analysis report
 
-Implemented Human Evaluation
+Translational accuracy can only be measured by Human Evaluation and Perlexity score only because researchers from Myanmar still trying to find which metrics can be used for Burmese language. Therefore, according to the least test perplexity and humna understading, additive attention transformer is the best among other attention mechanisms but you can choose all three models.
 
 
-## Task3
+## Task4
 ### Web app documentation
 
-The Website can be accessed on http://localhost:8000. User can type (English sentence) to input box and then the model translate into (Burmese sentence). My model is trained on transformer using general attention, multiplicative attention, additive attention mechanism. The main purpose is to see the differences between those mechanisms (The translational accuracy). According to the loss and perplexity scores, you can see the addictive model get the most similar accuracy with the true burmese meaning
+The Website can be accessed on http://localhost:8000. User can type (English sentence) to input box and then the model translate into (Burmese sentence). My model is trained on transformer using general attention, multiplicative attention, additive attention mechanism. The min purpose is to see the differences between those mechanisms (The translational accuracy). According to the loss and perplexity scores, the addictive model get the most similar accuracy with the true burmese meaning
+
