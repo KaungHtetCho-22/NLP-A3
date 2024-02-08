@@ -62,17 +62,17 @@ Referenced by **Dr.Ye Kyaw Thu** myWord repo (https://github.com/ye-kyaw-thu/myW
 <table>
   <tr>
     <td align="center">
-      <img src="app/images/general.png" alt="Seq2seq transformer with general attention" style="width: 100%;" />
+      <img src="./app/images/general_attention_transformer_loss_plot.png" alt="Seq2seq transformer with general attention" style="width: 100%;" />
       <br />
       <em>Fig. 1: Seq2seq transformer with general attention</em>
     </td>
     <td align="center">
-      <img src="app/images/multiplicative.png" alt="Seq2seq transformer with multiplicative attention" style="width: 100%;" />
+      <img src="./app/images/multiplicative_attention_transformer_loss_plot.png" alt="Seq2seq transformer with multiplicative attention" style="width: 100%;" />
       <br />
       <em>Fig. 2: Seq2seq transformer with multiplicative attention</em>
     </td>
     <td align="center">
-      <img src="app/images/additive.png" alt="Seq2seq transformer with additive attention" style="width: 100%;" />
+      <img src="./app/images/additive_attention_transformer_loss_plot.png" alt="Seq2seq transformer with additive attention" style="width: 100%;" />
       <br />
       <em>Fig. 3: Seq2seq transformer with additive attention</em>
     </td>
