@@ -17,33 +17,39 @@ Collect Eng / Myanmar parallel copurs from **TUFS Asian Language Parallel Corpus
 
 #### Preprocessing
 
-Referenced by **Dr.Ye Kyaw Thu** myWord repo (https://github.com/ye-kyaw-thu/myWord) for Burmese language tokenization. 
+- Burmese tokenizer | Credit to Kaung Htet San for pyidaungsu Burmese tokenizer (https://pypi.org/project/pyidaungsu/?fbclid=IwAR2zk1sDeEEm-y3nPzzikzOux4hN7D-igRWpjZENL-01UBnbjHsylKP1nQU)
 
-- *Input* | Start with Burmese text and then it is preprocessed to remove spaces because spaces are not consistently used as word delimiters in Burmese language
+- English tokenizer | get_tokenizer function from spacy
 
-- *Viterbi Algorithm* | Set the recursion limit to handle long sequences of text. Load unigram and bigram dictionaries from binary files.
+#### burmese word segmentaion process
 
-- *Unigram and Bigram* | 'Class ProbDist' reads a dictionary file (either unigram or bigram) and calculates the probability of each word or word pair because it is crucial for Viterbi in deciding where to segment the text
+- In Burmese writing, words are not always separated by spaces. Sometimes, spaces are used to make phrases clearer, but this is not a strict rule. In short sentences, spaces are rarely used. There are no definite rules on when to use spaces in Burmese, so sometimes words have spaces between them and sometimes they don't.
 
-- *Segmentation with Viterbi Algorithm* | Split the text into all possible first words and remaining text pairs.
+- Every single consonant letter in Burmese can create a syllable with an automatic vowel sound, like /a/ or a schwa. Other vowel sounds can be made by adding different marks. There are also marks for tones, marks for combining consonants at the start of syllables, and a special mark called "asat" that removes the automatic vowel sound for syllables ending in nasal or glottal sounds.
 
-- *Calculate probabilities for each segment* | Calculate the probability of the first word given its previous word (initially  for the start of the sentence) using the bigram model. Recursively call the Viterbi function on the remaining text to segment it further.
 
-- *Output* | Return the list of tokenized words as the output of the my_tokenizer function.
+<img src="image.png" alt="Burmese Word Segmentation Process" width="300"/>
+
+[Link to research](https://dl.acm.org/doi/pdf/10.1145/2846095)
+
+
+- Burmese word segmentation involves adding spaces in text without changing or rewriting anything else. As stated earlier, since syllables in Burmese are indivisible units, the process starts by separating these syllables with spaces. The next step is to figure out how these syllables come together to form words, which involves removing some of the spaces that were added between syllables. This is the basic approach for machines to segment Burmese words.
+
+- Passed en_my corpust(SRC_LANGUAGE(ENGLISH) to get_tokenizer function and TRG_LANGUAGE(BURMESE) to pds.tokenize function). 
 
 ## Task2
 #### Experiment with attention mechanisms
 
 | Attentions          | Training Loss | Training PPL | Validation Loss | Validation PPL | 
 |----------------|-------------|---------------|---------------|--------------------|
-| General Attention       |    2.077      |      7.980  |       2.971        |            19.519        |   
-| Multiplicative Attention |          2.081   |     8.013      |         2.954   |          19.187          |    
-| Additive Attention          |    2.049        |  7.761   |        2.949 |         19.087        |    
+| General Attention       |    0.396      |      1.485  |       2.547        |            12.766        |   
+| Multiplicative Attention |         0.396   |     1.487      |         2.608   |          13.578         |    
+| Additive Attention          |   0.430       |  1.537   |        2.553 |         12.840      |    
 
 ## Task3
 #### 1. Performance comparisons
 
-- epochs = 30
+- epochs = 100
 - device = Nvidia GeForce RTX 3060
 - batch_size = 64
 - num_heads = 8
@@ -53,9 +59,9 @@ Referenced by **Dr.Ye Kyaw Thu** myWord repo (https://github.com/ye-kyaw-thu/myW
 
 | Attentions          | Training time | Test PPL |
 |----------------|-------------|---------------|
-| General Attention       |    7m 10s        |   18.541     |    
-| Multiplicative Attention |          5m 50s   |     19.520       |  
-| Additive Attention          |       7m 23s    |    17.700      |  
+| General Attention       |    50s        |   18.541     |    
+| Multiplicative Attention |          54s   |     13.695       |  
+| Additive Attention          |       1m 37s    |    13.463      |  
 
 #### 2. Performance plots
 
