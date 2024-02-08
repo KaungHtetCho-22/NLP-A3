@@ -110,11 +110,11 @@ Collect Eng / Myanmar parallel copurs from **TUFS Asian Language Parallel Corpus
 
 #### 4. Analysis report
 
-Translational accuracy can only be measured by Human Evaluation and Perlexity score only because researchers from Myanmar still trying to find which metrics can be used for Burmese language. Therefore, according to the least test perplexity and humna understading, additive attention transformer is the best among other attention mechanisms but you can choose all three models.
+Translational accuracy can only be measured by Human Evaluation and Perlexity score only because researchers from Myanmar still trying to find which metrics can be used for Burmese language. Therefore, according to the least test perplexity and humna understading, additive attention transformer is the best among other attention mechanisms.
 
 
 ## Task4
 ### Web app documentation
 
-The Website can be accessed on http://localhost:8000. User can type (English sentence) to input box and then the model translate into (Burmese sentence). My model is trained on transformer using general attention, multiplicative attention, additive attention mechanism. The min purpose is to see the differences between those mechanisms (The translational accuracy). According to the loss and perplexity scores, the addictive model get the most similar accuracy with the true burmese meaning
+The Website can be accessed on http://localhost:8000. User can type (English sentence) to input box and then the model translate into (Burmese sentence). My model is trained on transformer using general attention, multiplicative attention, additive attention mechanism. The min purpose is to see the differences between those mechanisms (The translational accuracy). According to the loss and perplexity scores, the addictive model get the most similar accuracy with the true burmese meaning, but you can choose all three models.
 
